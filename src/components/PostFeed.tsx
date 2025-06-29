@@ -14,6 +14,8 @@ const PostFeed = ({ feedType = 'home', topicName, communityName }: PostFeedProps
       case 'popular':
         return 'Popular Posts';
       case 'topic':
+        if (topicName === 'qas') return 'Q&As Posts';
+        if (topicName === 'pop-culture') return 'Pop Culture Posts';
         return `${topicName?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} Posts`;
       case 'community':
         return `ts/${communityName}`;

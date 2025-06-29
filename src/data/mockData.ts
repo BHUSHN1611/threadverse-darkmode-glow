@@ -1,4 +1,3 @@
-
 export interface Post {
   id: string;
   title: string;
@@ -35,8 +34,8 @@ export const mockPosts: Post[] = [
     comments: 156,
     timestamp: '3 hours ago',
     tag: 'Unsolved',
-    image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=600&h=400&fit=crop',
-    topic: 'q-as'
+    image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=400&h=400&fit=crop',
+    topic: 'qas'
   },
   {
     id: '2',
@@ -49,7 +48,7 @@ export const mockPosts: Post[] = [
     comments: 89,
     timestamp: '2 hours ago',
     tag: 'Showcase',
-    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=400&fit=crop',
     topic: 'technology'
   },
   {
@@ -76,7 +75,7 @@ export const mockPosts: Post[] = [
     comments: 145,
     timestamp: '1 day ago',
     tag: 'OC',
-    image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=400&fit=crop',
     topic: 'internet-culture'
   },
   {
@@ -90,7 +89,7 @@ export const mockPosts: Post[] = [
     comments: 78,
     timestamp: '5 hours ago',
     tag: 'Before & After',
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=400&fit=crop',
     topic: 'games'
   }
 ];
@@ -108,6 +107,7 @@ export const topicPosts: Record<string, Post[]> = {
       comments: 287,
       timestamp: '4 hours ago',
       tag: 'Relatable',
+      image: 'https://images.unsplash.com/photo-1485833077593-4278bba3f11f?w=400&h=400&fit=crop',
       topic: 'internet-culture'
     },
     {
@@ -121,7 +121,7 @@ export const topicPosts: Record<string, Post[]> = {
       comments: 234,
       timestamp: '7 hours ago',
       tag: 'Throwback',
-      image: 'https://images.unsplash.com/photo-1485833077593-4278bba3f11f?w=600&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=400&fit=crop',
       topic: 'internet-culture'
     }
   ],
@@ -137,7 +137,7 @@ export const topicPosts: Record<string, Post[]> = {
       comments: 445,
       timestamp: '3 hours ago',
       tag: 'Success Story',
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=400&fit=crop',
       topic: 'games'
     },
     {
@@ -151,6 +151,7 @@ export const topicPosts: Record<string, Post[]> = {
       comments: 156,
       timestamp: '1 day ago',
       tag: 'Setup',
+      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=400&fit=crop',
       topic: 'games'
     }
   ],
@@ -179,8 +180,94 @@ export const topicPosts: Record<string, Post[]> = {
       comments: 234,
       timestamp: '6 hours ago',
       tag: 'Showcase',
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=400&fit=crop',
       topic: 'technology'
+    }
+  ],
+  'qas': [
+    {
+      id: 'qa1',
+      title: 'Why do we see faces in clouds and random objects?',
+      author: 'curious_mind_123',
+      community: 'ts/explainlikeimfive',
+      content: 'I keep seeing faces everywhere - in clouds, in wood grain, in electrical outlets. Is there a scientific reason for this?',
+      upvotes: 3456,
+      downvotes: 78,
+      comments: 567,
+      timestamp: '5 hours ago',
+      tag: 'Science',
+      image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=400&h=400&fit=crop',
+      topic: 'qas'
+    },
+    {
+      id: 'qa2',
+      title: 'How do noise-canceling headphones actually work?',
+      author: 'tech_learner',
+      community: 'ts/askscience',
+      content: 'I understand they block sound, but how do they know which sounds to cancel and which to let through?',
+      upvotes: 2134,
+      downvotes: 45,
+      comments: 298,
+      timestamp: '8 hours ago',
+      tag: 'Technology',
+      topic: 'qas'
+    },
+    {
+      id: 'qa3',
+      title: 'What happens to all the stuff we flush down toilets?',
+      author: 'environmentally_aware',
+      community: 'ts/nostupidquestions',
+      content: 'Like seriously, where does it all go? How is it processed? This keeps me up at night.',
+      upvotes: 1876,
+      downvotes: 23,
+      comments: 445,
+      timestamp: '12 hours ago',
+      tag: 'Environment',
+      image: 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=400&h=400&fit=crop',
+      topic: 'qas'
+    }
+  ],
+  'pop-culture': [
+    {
+      id: 'pc1',
+      title: 'Marvel just announced 12 new movies for Phase 6',
+      author: 'marvel_fanatic',
+      community: 'ts/marvelstudios',
+      content: 'The lineup looks incredible! X-Men, Fantastic Four, and some surprises. What are your thoughts on the timeline?',
+      upvotes: 8934,
+      downvotes: 234,
+      comments: 1234,
+      timestamp: '2 hours ago',
+      tag: 'News',
+      image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&h=400&fit=crop',
+      topic: 'pop-culture'
+    },
+    {
+      id: 'pc2',
+      title: 'Taylor Swift\'s new album breaks streaming records again',
+      author: 'music_charts_watcher',
+      community: 'ts/popheads',
+      content: 'Over 300 million streams in the first 24 hours. The numbers are absolutely insane!',
+      upvotes: 5678,
+      downvotes: 567,
+      comments: 892,
+      timestamp: '6 hours ago',
+      tag: 'Music',
+      topic: 'pop-culture'
+    },
+    {
+      id: 'pc3',
+      title: 'Netflix cancels another beloved series after 2 seasons',
+      author: 'binge_watcher_2024',
+      community: 'ts/television',
+      content: 'Why does Netflix keep doing this to us? Just when shows get good, they axe them. RIP to another great show.',
+      upvotes: 4321,
+      downvotes: 156,
+      comments: 678,
+      timestamp: '1 day ago',
+      tag: 'Discussion',
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=400&fit=crop',
+      topic: 'pop-culture'
     }
   ]
 };
@@ -198,7 +285,7 @@ export const communityPosts: Record<string, Post[]> = {
       comments: 187,
       timestamp: '4 hours ago',
       tag: 'Case Study',
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop'
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=400&fit=crop'
     },
     {
       id: 'ui2',
@@ -210,7 +297,8 @@ export const communityPosts: Record<string, Post[]> = {
       downvotes: 12,
       comments: 89,
       timestamp: '1 day ago',
-      tag: 'Resources'
+      tag: 'Resources',
+      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=400&fit=crop'
     }
   ],
   'whatisit': [
@@ -225,7 +313,7 @@ export const communityPosts: Record<string, Post[]> = {
       comments: 456,
       timestamp: '2 hours ago',
       tag: 'Unsolved',
-      image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=600&h=400&fit=crop'
+      image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=400&h=400&fit=crop'
     },
     {
       id: 'wi2',
@@ -237,7 +325,170 @@ export const communityPosts: Record<string, Post[]> = {
       downvotes: 23,
       comments: 234,
       timestamp: '8 hours ago',
-      tag: 'Solved'
+      tag: 'Solved',
+      image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=400&h=400&fit=crop'
+    }
+  ],
+  'TMKOC': [
+    {
+      id: 'tm1',
+      title: 'Jethalal\'s best comedy moments compilation',
+      author: 'tmkoc_fan_forever',
+      community: 'ts/TMKOC',
+      content: 'Rewatching old episodes and Jethalal never fails to make me laugh. These are his top 10 moments!',
+      upvotes: 2456,
+      downvotes: 34,
+      comments: 345,
+      timestamp: '3 hours ago',
+      tag: 'Comedy',
+      image: 'https://images.unsplash.com/photo-1485833077593-4278bba3f11f?w=400&h=400&fit=crop'
+    },
+    {
+      id: 'tm2',
+      title: 'Remember when TMKOC had different storylines?',
+      author: 'nostalgic_viewer',
+      community: 'ts/TMKOC',
+      content: 'The early seasons had so much variety. Now it feels repetitive. Anyone else miss the old format?',
+      upvotes: 1789,
+      downvotes: 89,
+      comments: 267,
+      timestamp: '1 day ago',
+      tag: 'Discussion'
+    }
+  ],
+  'NoStupidQuestions': [
+    {
+      id: 'ns1',
+      title: 'Is it weird that I talk to my plants?',
+      author: 'plant_parent_123',
+      community: 'ts/NoStupidQuestions',
+      content: 'I find myself having full conversations with my houseplants. Is this normal or should I be concerned?',
+      upvotes: 3456,
+      downvotes: 23,
+      comments: 567,
+      timestamp: '4 hours ago',
+      tag: 'Lifestyle'
+    },
+    {
+      id: 'ns2',
+      title: 'Why do I always think of the perfect comeback hours later?',
+      author: 'shower_thoughts_user',
+      community: 'ts/NoStupidQuestions',
+      content: 'There has to be a scientific explanation for this phenomenon. It happens every single time!',
+      upvotes: 5678,
+      downvotes: 45,
+      comments: 789,
+      timestamp: '8 hours ago',
+      tag: 'Psychology',
+      image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&h=400&fit=crop'
+    }
+  ],
+  'Minecraft': [
+    {
+      id: 'mc1',
+      title: 'My 5-year survival world castle is finally complete',
+      author: 'master_builder_2024',
+      community: 'ts/Minecraft',
+      content: 'Started this project in 2019 and finally finished it! Every block was placed by hand in survival mode.',
+      upvotes: 12456,
+      downvotes: 67,
+      comments: 892,
+      timestamp: '2 hours ago',
+      tag: 'Build',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=400&fit=crop'
+    },
+    {
+      id: 'mc2',
+      title: 'Found 12 diamonds in one cave system!',
+      author: 'lucky_miner',
+      community: 'ts/Minecraft',
+      content: 'Best mining session ever! Y-level -58 is definitely the sweet spot for 1.21.',
+      upvotes: 3456,
+      downvotes: 123,
+      comments: 234,
+      timestamp: '6 hours ago',
+      tag: 'Achievement'
+    }
+  ],
+  'Fitness': [
+    {
+      id: 'fit1',
+      title: 'Before and after: 2 years of consistent training',
+      author: 'transformation_journey',
+      community: 'ts/Fitness',
+      content: 'Started at 300lbs, now at 180lbs. Consistency is everything. Here\'s my story and routine.',
+      upvotes: 8934,
+      downvotes: 45,
+      comments: 1234,
+      timestamp: '1 hour ago',
+      tag: 'Progress',
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=400&fit=crop'
+    },
+    {
+      id: 'fit2',
+      title: 'Home gym setup for under $500',
+      author: 'budget_fitness_guru',
+      community: 'ts/Fitness',
+      content: 'You don\'t need expensive equipment to get fit. Here\'s how I built an effective home gym on a budget.',
+      upvotes: 4567,
+      downvotes: 78,
+      comments: 567,
+      timestamp: '5 hours ago',
+      tag: 'Equipment'
+    }
+  ],
+  'DnD': [
+    {
+      id: 'dnd1',
+      title: 'My players just derailed 6 months of campaign planning',
+      author: 'forever_dm',
+      community: 'ts/DnD',
+      content: 'They decided to befriend the BBEG instead of fighting him. Now I have to rewrite everything. Send help.',
+      upvotes: 6789,
+      downvotes: 23,
+      comments: 890,
+      timestamp: '3 hours ago',
+      tag: 'DM Problems',
+      image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=400&h=400&fit=crop'
+    },
+    {
+      id: 'dnd2',
+      title: 'First time playing D&D at 45 years old',
+      author: 'new_adventurer',
+      community: 'ts/DnD',
+      content: 'Never thought I\'d try this "nerdy" game. Now I\'m completely hooked! Why did I wait so long?',
+      upvotes: 4321,
+      downvotes: 12,
+      comments: 456,
+      timestamp: '1 day ago',
+      tag: 'New Player'
+    }
+  ],
+  'videos': [
+    {
+      id: 'vid1',
+      title: 'This street performer\'s skills are absolutely insane',
+      author: 'video_curator',
+      community: 'ts/videos',
+      content: 'Saw this guy in NYC yesterday. The crowd was going wild! Had to record and share.',
+      upvotes: 15678,
+      downvotes: 234,
+      comments: 1567,
+      timestamp: '2 hours ago',
+      tag: 'Street Performance',
+      image: 'https://images.unsplash.com/photo-1485833077593-4278bba3f11f?w=400&h=400&fit=crop'
+    },
+    {
+      id: 'vid2',
+      title: 'Cat discovers automatic feeder, chaos ensues',
+      author: 'pet_owner_life',
+      community: 'ts/videos',
+      content: 'My cat figured out how to trigger the feeder repeatedly. RIP my kibble budget.',
+      upvotes: 8901,
+      downvotes: 45,
+      comments: 678,
+      timestamp: '4 hours ago',
+      tag: 'Pets'
     }
   ]
 };

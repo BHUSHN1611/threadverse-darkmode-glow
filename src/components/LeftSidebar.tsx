@@ -16,11 +16,11 @@ const LeftSidebar = () => {
   ];
 
   const topics = [
-    'Internet Culture',
-    'Games', 
-    'Q&As',
-    'Technology',
-    'Pop Culture'
+    { name: 'Internet Culture', slug: 'internet-culture' },
+    { name: 'Games', slug: 'games' }, 
+    { name: 'Q&As', slug: 'qas' },
+    { name: 'Technology', slug: 'technology' },
+    { name: 'Pop Culture', slug: 'pop-culture' }
   ];
 
   const recentCommunities = [
@@ -68,12 +68,12 @@ const LeftSidebar = () => {
           <CollapsibleContent>
             <CardContent className="p-3 pt-0 space-y-1">
               {topics.map((topic) => (
-                <Link key={topic} to={`/topic/${topic.toLowerCase().replace(/\s+/g, '-')}`}>
+                <Link key={topic.slug} to={`/topic/${topic.slug}`}>
                   <Button
                     variant="ghost"
                     className="w-full justify-start text-sm hover:bg-accent text-muted-foreground hover:text-foreground"
                   >
-                    {topic}
+                    {topic.name}
                   </Button>
                 </Link>
               ))}

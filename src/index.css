@@ -6,32 +6,32 @@
 /* ThreadSpace Dark Theme */
 @layer base {
   :root {
-    --background: 220 13% 10%;
+    --background: 220 13% 4%;
     --foreground: 0 0% 100%;
 
-    --card: 220 13% 10%;
+    --card: 220 13% 4%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 220 13% 10%;
+    --popover: 220 13% 4%;
     --popover-foreground: 0 0% 100%;
 
     --primary: 16 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 13% 15%;
+    --secondary: 220 13% 8%;
     --secondary-foreground: 0 0% 90%;
 
-    --muted: 220 13% 15%;
+    --muted: 220 13% 8%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 220 13% 20%;
+    --accent: 220 13% 12%;
     --accent-foreground: 0 0% 90%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 13% 20%;
-    --input: 220 13% 15%;
+    --border: 220 13% 12%;
+    --input: 220 13% 8%;
     --ring: 16 100% 50%;
 
     --radius: 0.5rem;
@@ -45,7 +45,7 @@
 
   body {
     @apply bg-background text-foreground;
-    background-color: #1A1A1A;
+    background-color: #0E1113;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 

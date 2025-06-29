@@ -1,7 +1,6 @@
 
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 
 const RightSidebar = () => {
   const popularCommunities = [
@@ -39,9 +38,6 @@ const RightSidebar = () => {
               </div>
             </Link>
           ))}
-          <Button variant="ghost" className="w-full justify-start text-primary hover:bg-primary/10">
-            See More →
-          </Button>
         </CardContent>
       </Card>
     </aside>

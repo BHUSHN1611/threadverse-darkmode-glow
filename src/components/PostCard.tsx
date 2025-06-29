@@ -128,13 +128,13 @@ const PostCard = ({ post, onClick }: PostCardProps) => {
               {post.title}
             </h3>
 
-            {/* Post Image */}
+            {/* Post Image - 1:1 Aspect Ratio */}
             {post.image && (
               <div className="mb-3 rounded-lg overflow-hidden">
                 <img 
                   src={post.image} 
                   alt={post.title}
-                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full aspect-square object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
             )}

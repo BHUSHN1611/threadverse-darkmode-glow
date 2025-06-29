@@ -10,10 +10,10 @@ const TopNavigation = () => {
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 threadspace-gradient rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-sm">T</span>
+          <div className="flex items-center">
+            <span className="text-xl font-bold text-primary">Thread</span>
+            <span className="text-xl font-serif italic text-white">Space</span>
           </div>
-          <span className="text-xl font-bold text-primary">ThreadSpace</span>
         </div>
 
         {/* Search Bar */}

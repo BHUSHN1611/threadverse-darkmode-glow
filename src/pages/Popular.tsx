@@ -4,7 +4,7 @@ import LeftSidebar from '@/components/LeftSidebar';
 import PostFeed from '@/components/PostFeed';
 import RightSidebar from '@/components/RightSidebar';
 
-const Index = () => {
+const Popular = () => {
   return (
     <div className="min-h-screen bg-background">
       <TopNavigation />
@@ -13,7 +13,7 @@ const Index = () => {
           <LeftSidebar />
         </div>
         <div className="w-[60%] flex-1">
-          <PostFeed feedType="home" />
+          <PostFeed feedType="popular" />
         </div>
         <div className="w-[20%] min-w-[250px]">
           <RightSidebar />
@@ -23,4 +23,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Popular;

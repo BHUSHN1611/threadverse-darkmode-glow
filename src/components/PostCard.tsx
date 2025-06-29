@@ -1,21 +1,25 @@
 
-import { ArrowUp, ArrowDown } from 'lucide-react';
+import { ArrowUp, ArrowDown, MessageCircle, Bookmark, Share } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Post } from '@/data/mockData';
 import { useState } from 'react';
+import { toast } from '@/components/ui/use-toast';
 
 interface PostCardProps {
   post: Post;
+  onClick?: () => void;
 }
 
-const PostCard = ({ post }: PostCardProps) => {
+const PostCard = ({ post, onClick }: PostCardProps) => {
   const [userVote, setUserVote] = useState<'up' | 'down' | null>(null);
   const [localUpvotes, setLocalUpvotes] = useState(post.upvotes);
   const [localDownvotes, setLocalDownvotes] = useState(post.downvotes);
+  const [isSaved, setIsSaved] = useState(false);
 
-  const handleVote = (voteType: 'up' | 'down') => {
+  const handleVote = (voteType: 'up' | 'down', e: React.MouseEvent) => {
+    e.stopPropagation();
     if (userVote === voteType) {
       // Remove vote
       if (voteType === 'up') {
@@ -43,10 +47,34 @@ const PostCard = ({ post }: PostCardProps) => {
     }
   };
 
+  const handleSave = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsSaved(!isSaved);
+    toast({
+      title: isSaved ? "Post unsaved" : "Post saved",
+      description: isSaved ? "Removed from your saved posts" : "Added to your saved posts",
+    });
+  };
+
+  const handleShare = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    // Simulate copying post link
+    const postUrl = `${window.location.origin}/post/${post.id}`;
+    navigator.clipboard.writeText(postUrl).then(() => {
+      toast({
+        title: "Link copied!",
+        description: "Post link has been copied to your clipboard",
+      });
+    });
+  };
+
   const netScore = localUpvotes - localDownvotes;
 
   return (
-    <Card className="bg-card border-border hover-lift transition-all duration-200 hover:border-primary/50 animate-fade-in">
+    <Card 
+      className="bg-card border-border hover-lift transition-all duration-200 hover:border-primary/50 hover:shadow-lg cursor-pointer animate-fade-in"
+      onClick={onClick}
+    >
       <CardContent className="p-4">
         <div className="flex space-x-3">
           {/* Voting Section */}
@@ -54,7 +82,7 @@ const PostCard = ({ post }: PostCardProps) => {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => handleVote('up')}
+              onClick={(e) => handleVote('up', e)}
               className={`p-1 h-8 w-8 rounded hover:bg-primary/20 transition-colors ${
                 userVote === 'up' ? 'text-primary bg-primary/10' : 'text-muted-foreground'
               }`}
@@ -69,7 +97,7 @@ const PostCard = ({ post }: PostCardProps) => {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => handleVote('down')}
+              onClick={(e) => handleVote('down', e)}
               className={`p-1 h-8 w-8 rounded hover:bg-red-500/20 transition-colors ${
                 userVote === 'down' ? 'text-red-400 bg-red-500/10' : 'text-muted-foreground'
               }`}
@@ -85,8 +113,6 @@ const PostCard = ({ post }: PostCardProps) => {
                 {post.community}
               </span>
               <span>•</span>
-              <span>Posted by u/{post.author}</span>
-              <span>•</span>
               <span>{post.timestamp}</span>
               {post.tag && (
                 <>
@@ -98,23 +124,52 @@ const PostCard = ({ post }: PostCardProps) => {
               )}
             </div>
 
-            <h3 className="text-lg font-semibold text-foreground mb-2 hover:text-primary cursor-pointer transition-colors">
+            <h3 className="text-lg font-bold text-foreground mb-2 hover:text-primary cursor-pointer transition-colors">
               {post.title}
             </h3>
+
+            {/* Post Image */}
+            {post.image && (
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img 
+                  src={post.image} 
+                  alt={post.title}
+                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            )}
 
             <p className="text-muted-foreground text-sm mb-3 line-clamp-2">
               {post.content}
             </p>
 
             <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-              <Button variant="ghost" size="sm" className="h-8 px-3 hover:bg-accent">
-                💬 {post.comments} Comments
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="h-8 px-3 hover:bg-accent"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <MessageCircle className="w-4 h-4 mr-1" />
+                {post.comments} Comments
               </Button>
-              <Button variant="ghost" size="sm" className="h-8 px-3 hover:bg-accent">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className={`h-8 px-3 hover:bg-accent ${isSaved ? 'text-primary' : ''}`}
+                onClick={handleSave}
+              >
+                <Bookmark className={`w-4 h-4 mr-1 ${isSaved ? 'fill-current' : ''}`} />
+                {isSaved ? 'Saved' : 'Save'}
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="h-8 px-3 hover:bg-accent"
+                onClick={handleShare}
+              >
+                <Share className="w-4 h-4 mr-1" />
                 Share
-              </Button>
-              <Button variant="ghost" size="sm" className="h-8 px-3 hover:bg-accent">
-                Save
               </Button>
             </div>
           </div>

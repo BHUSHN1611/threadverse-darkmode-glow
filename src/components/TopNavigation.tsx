@@ -31,7 +31,7 @@ const TopNavigation = () => {
         {/* User Section */}
         <div className="flex items-center space-x-4">
           <Button variant="outline" size="sm" className="hover:bg-primary hover:text-primary-foreground transition-colors">
-            Login
+            Bhushan
           </Button>
           <Avatar className="w-8 h-8 cursor-pointer hover:ring-2 hover:ring-primary transition-all">
             <AvatarImage src="/placeholder-avatar.jpg" alt="User" />

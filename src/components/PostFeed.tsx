@@ -2,11 +2,11 @@
 import { mockPosts, topicPosts, communityPosts } from '@/data/mockData';
 import PostCard from './PostCard';
 
-// interface PostFeedProps {
-//   feedType?: 'home' | 'popular' | 'topic' | 'community';
-//   topicName?: string;
-//   communityName?: string;
-// }
+interface PostFeedProps {
+  feedType?: 'home' | 'popular' | 'topic' | 'community';
+  topicName?: string;
+  communityName?: string;
+}
 
 const PostFeed = ({ feedType = 'home', topicName, communityName }: PostFeedProps) => {
   const getFeedTitle = () => {

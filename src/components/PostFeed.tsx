@@ -50,23 +50,10 @@ const PostFeed = ({ feedType = 'home', topicName, communityName }: PostFeedProps
       return null;
     }
 
-  //   return (
-  //     <div className="flex space-x-2">
-  //       <button className="px-4 py-2 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors">
-  //         Hot
-  //       </button>
-  //       <button className="px-4 py-2 bg-accent text-accent-foreground rounded-lg font-medium hover:bg-accent/80 transition-colors">
-  //         New
-  //       </button>
-  //       <button className="px-4 py-2 bg-accent text-accent-foreground rounded-lg font-medium hover:bg-accent/80 transition-colors">
-  //         Top
-  //       </button>
-  //       <button className="px-4 py-2 bg-accent text-accent-foreground rounded-lg font-medium hover:bg-accent/80 transition-colors">
-  //         Rising
-  //       </button>
-  //     </div>
-  //   );
-  // };
+    return (
+   
+    );
+  };
 
   return (
     <main className="p-4 h-screen overflow-y-auto">
